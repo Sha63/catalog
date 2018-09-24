@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Edit Item</title>
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+	<body>
+		<header>
+			<div id="header">
+				<a href="{{url_for('showCategories')}}"><h1 id="header-title">Catalog App</h1></a>
+				{% if login_session['name'] == null%}
+				<a id="header-login" href="{{ url_for('login') }}" >Login</a>
+				{% else %}
+				<form action="{{url_for('logout')}}" method="POST">
+					<input id="header-login" type="submit" value="Logout">
+				</form>
+				{% endif %}
+			</div>
+		</header>
+		<div style="clear: both;"></div>
+		<section id="body">
+			<h2 class="body-title">Edit Item</h2>
+			<form action="{{ url_for('editItem', category_name = item.category_name, item_name = item.name) }}" method="POST">
+				<label for="name">Title</label> <br>
+				<p class="item-in"><input class="item-name" type="text" name="name" value="{{ item.name }}"></p>
+
+				<label for="description">Description</label> <br>
+				<p class="item-in"><textarea id="item-desc" name="description">{{ item.description }}</textarea></p>
+
+				<label for="category">Category</label> <br>
+				<p class="item-in"><select id="item-cat" name="category">
+					{% for c in categories %}
+					<option value="{{c.name}}" {% if c.name == item.category_name %} selected {% endif %}>{{c.name}}</option>
+					{% endfor %}
+				</select></p>
+
+				<input class="submit" type="submit" name="submit" value="Submit">
+			</form>
+		</section>
+	</body>
+</html>

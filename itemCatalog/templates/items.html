@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Items</title>
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+	<body>
+		<header>
+			<div id="header">
+				<a href="{{url_for('showCategories')}}"><h1 id="header-title">Catalog App</h1></a>
+				{% if login_session['name'] == null %}
+				<a id="header-login" href="{{ url_for('login') }}" >Login</a>
+				{% else %}
+				<form action="{{url_for('logout')}}" method="POST">
+					<input id="header-login" type="submit" value="Logout">
+				</form>
+				{% endif %}
+			</div>
+		</header>
+		<div style="clear: both;"></div>
+		<section id="body">
+			<div id="content-border" class="content">
+				<h2 class="body-title">Categories</h2>
+				{% for c in categories %}
+				<a href="{{ url_for('showItems', category_name = c.name) }}"><p class="body-data">{{c.name}}</p></a>
+				{% endfor %}
+			</div>
+			<div class="content">
+				{% if login_session['name'] != null %}
+				<a href="{{ url_for('addItem', category_name = items[0].category_name) }}"><p class="body-data">Add Item</p></a>
+				{% endif %}
+				<h2 class="body-title">{{items[0].category_name}}</h2>
+				{% for i in items %}
+				<a href="{{ url_for('showItemDetails', category_name = i.category_name, item_name = i.name) }}"><p class="body-data">{{i.name}}</p></a>
+				{% endfor %}
+			</div>
+		</section>
+		{% with messages = get_flashed_messages() %}
+	      {% if messages %}
+	      	<div id="green" class="flash">
+	        {% for message in messages %}
+	            {{ message }} <br>
+	        {% endfor %}
+	    	</div>
+	        {% endif %}
+	     {% endwith %}
+	</body>
+</html>

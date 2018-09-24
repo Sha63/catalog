@@ -1,0 +1,164 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #DDDDDD;
+	font-family: Tahoma, Ariel, sans-serif;
+}
+
+header {
+	background-color: #022040;
+	width: 100%;
+	overflow: auto;
+	padding: 5px 0;
+}
+
+input:focus, select:focus, textarea:focus {
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+input[type="submit"]:hover {
+	cursor: pointer;
+}
+
+#header {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#header-title {
+	float: left;
+	color: white;
+	margin: 0;
+}
+
+#header-login {
+	background-color: #E34D07;
+	color: white;
+	float: right;
+	margin: 5px 0;
+	padding: 7px 12px;
+	border: none;
+	border-radius: 3px;
+	font-size: 120%;
+}
+
+
+#body {
+	background-color: white;
+	width: 1000px;
+	margin: 20px auto;
+	padding: 5px 20px 20px 20px;
+	border-top: 1px #B6B6B6 solid;
+	border-right: 1px #F4F4F4 solid;
+	border-bottom: 1px #C6C6C6 solid;
+	border-left: 1px #B3B3B3 solid;
+	overflow: auto;
+}
+
+.content {
+	float: left;
+	margin-right: 50px;
+	margin-top: 10px;
+}
+
+.body-title {
+	color: #1C3950;
+	margin-top: 10px;
+}
+
+.body-data {
+	color: #E34D0B;
+	margin: 3px 0;
+	font-weight: bold;
+}
+
+.body-data-parent {
+	color: #99999B;
+	font-style: italic;
+}
+
+#content-border {
+	border-right: 1px #E1E1E1 solid;
+	padding-right: 50px;
+}
+
+#item-details {
+	float: left;
+}
+
+.item-name {
+	box-shadow: 1px 1px #CCCCCC;
+	border: none;
+}
+
+#item-desc {
+	box-shadow: 1px 1px #CCCCCC inset;
+	border: none;
+	resize: none;
+}
+
+#item-cat {
+	border: 1px #CCCCCC solid;
+	box-shadow: 1px 1px #CCCCCC;
+	border-radius: 5px;
+	padding-right: 50px;
+}
+
+.item-in {
+	margin-top: 3px;
+}
+
+.submit {
+	box-shadow: 5px 5px #E9E9E9 inset;
+	border: 1px #CCCCCC solid;
+	padding: 3px 5px;
+	width: 80px;
+	color: black;
+	font-size: 90%;
+}
+
+.body-option {
+	color: #E34D0B;
+}
+
+#body-options {
+	margin-bottom: 0;
+}
+
+#login-form {
+	text-align: center;
+}
+
+.login-label {
+	margin: 10px;
+}
+
+.login-text {
+	display: inline-block;
+	margin: 10px;
+}
+
+.flash {
+	clear: left;
+	padding: 10px;
+	width: 1000px;
+	margin: 5px auto;
+}
+
+#green {
+	background-color: #DFF0D8;
+	color: #739F72;
+}
+
+#red {
+	background-color: #F2DEDE;
+	color: #B45C5A;
+}
